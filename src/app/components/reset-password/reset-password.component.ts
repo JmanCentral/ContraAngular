@@ -42,12 +42,11 @@ export class ResetPasswordComponent implements OnInit {
     }
   
     this.passwordService.resetPassword(this.token, this.newPassword).subscribe(
-      response => {
-        alert('Contraseña restablecida con éxito: ' + response);
-        this.router.navigate(['/Exito']);
+      () => {
+        this.router.navigate(['/succesfull'], { replaceUrl: true });
       },
       error => {
-        alert('Error al restablecer contraseña: ' + error.error);
+        console.error('Error al restablecer contraseña:', error.error);
       }
     );
   }

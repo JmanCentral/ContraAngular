@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SuccesfullComponent } from './succesfull/succesfull.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    SuccesfullComponent
   ],
   imports: [
     BrowserModule,

@@ -20,3 +20,8 @@
 
    "username": "saldo",
     "contrasena": "bayern123"
+
+
+    ng generate service succesfull
+
+  ng generate component succesfull
