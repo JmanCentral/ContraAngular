@@ -1,0 +1,7 @@
+{
+  "routes": {
+    "/ContraAngular": {},
+    "/ContraAngular/reset-password": {},
+    "/ContraAngular/succesfull": {}
+  }
+}
