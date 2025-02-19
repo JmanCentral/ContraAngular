@@ -43,10 +43,13 @@ export class ResetPasswordComponent implements OnInit {
   
     this.passwordService.resetPassword(this.token, this.newPassword).subscribe(
       () => {
-        this.router.navigate(['/succesfull'], { replaceUrl: true });
+        // Mostrar una alerta de éxito
+        alert('Error al reestablecer la contraseña');
+        console.log('onSubmit llamado');
       },
       error => {
-        console.error('Error al restablecer contraseña:', error.error);
+        // Mostrar una alerta de error
+        this.router.navigate(['/succesfull'], {replaceUrl: true});
       }
     );
   }
