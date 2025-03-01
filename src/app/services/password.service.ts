@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class PasswordService {
 
-  private API_URL = 'http://localhost:8862/api/password';
+  private API_URL = 'http://100.115.249.2:8862/api/password';
 
   constructor(private http: HttpClient) {}
 

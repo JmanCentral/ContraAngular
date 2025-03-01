@@ -42,14 +42,21 @@ export class ResetPasswordComponent implements OnInit {
     }
   
     this.passwordService.resetPassword(this.token, this.newPassword).subscribe(
-      () => {
-        // Mostrar una alerta de éxito
-        alert('Error al reestablecer la contraseña');
-        console.log('onSubmit llamado');
+      (response: any) => {
+        try {
+          let jsonResponse = JSON.parse(response); // 🔥 Convierte el string a JSON
+          console.log('✅ JSON Parseado:', jsonResponse);
+    
+          this.router.navigate(['/succesfull'], { 
+            queryParams: { username: jsonResponse.username }, 
+            replaceUrl: true 
+          });
+        } catch (error) {
+          console.error('❌ Error al parsear JSON:', error);
+        }
       },
       error => {
-        // Mostrar una alerta de error
-        this.router.navigate(['/succesfull'], {replaceUrl: true});
+        alert('Error al restablecer la contraseña');
       }
     );
   }
